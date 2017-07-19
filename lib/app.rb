@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'player'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -17,12 +18,10 @@ class Battle < Sinatra::Base
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     last_move = session[:last_move]
-    p last_move
     attack_confirmation = ''
     if last_move == 'Attack'
       attack_confirmation = "#{@player_1_name} has attacked #{@player_2_name}"
     end
-    p attack_confirmation
     erb :play, { locals: { player_1_hp: player_1_hp, player_2_hp: player_2_hp, attack_confirmation: attack_confirmation } }
   end
 
