@@ -1,7 +1,7 @@
 describe Player do
-  let(:player_name) { 'James' }
-  subject(:player) { Player.new(player_name) }
+  let(:name) { 'James' }
+  subject(:player) { described_class.new(name) }
   it 'should return the name' do
-    expect(player.name).to eq player_name
+    expect(player.name).to eq name
   end
 end
