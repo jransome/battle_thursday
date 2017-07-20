@@ -1,6 +1,9 @@
-It's <%= @player_1_name %> vs. <%= @player_2_name %>!!!!
-<%= attack_confirmation %>
-<%= @player_1_name %>'s HP: <%= player_1_hp %>  <%= @player_2_name %>'s HP: <%= player_2_hp %>
+<h1>It's <%= @player_1.name %> vs. <%= @player_2.name %>!!!! </h1>
+
+<p><%= attack_confirmation %></p>
+
+<p><%= @player_1.name %>'s HP: <%= @player_1.hp %> >==============================< <%= @player_2.name %>'s HP: <%= @player_2.hp %></p>
+
 <form action="/attacked" method="post">
   <input type="submit" name="attack" value="Attack" >
 </form>
