@@ -12,5 +12,4 @@ class Player
     @hp -= damage
   end
 
-
 end
