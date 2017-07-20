@@ -4,6 +4,7 @@ require './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
+
   get '/' do
     erb :index
   end
@@ -16,22 +17,17 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-
+    @attack_confirmation = $game.attack_confirmation(session[:last_move])
+    $game.switch_turn unless @attack_confirmation.empty?
     @player_1 = $game.players.first
     @player_2 = $game.players.last
-
-    last_move = session[:last_move]
-    attack_confirmation = ''
-    if last_move == 'Attack'
-      attack_confirmation = "#{@player_1.name} has attacked #{@player_2.name}"
-    end
-    erb :play, { locals: { attack_confirmation: attack_confirmation } }
+    @turn = $game.turn
+    erb :play
   end
 
   post '/attacked' do
-    @player_2 = $game.players.last
     session[:last_move] = params[:attack]
-    $game.attack(@player_2)
+    $game.attack
     redirect '/play'
   end
 
