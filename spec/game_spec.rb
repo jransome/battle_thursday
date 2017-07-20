@@ -26,4 +26,12 @@ describe Game do
       expect(game.player_1_turn).to be false
     end
   end
+
+  context 'one player has <= 0 hp' do
+    it 'ends the game' do
+      allow(player_2).to receive(:dead?) { true }
+      game.attack
+      expect(game).to be_ended
+    end
+  end
 end

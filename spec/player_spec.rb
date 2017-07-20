@@ -7,5 +7,9 @@ describe Player do
     expect(player.name).to eq name
   end
 
+  it 'should know if is dead' do
+    player.take_damage(Player::DEFAULT_HP)
+    expect(player.dead?).to eq true
+  end
 
 end

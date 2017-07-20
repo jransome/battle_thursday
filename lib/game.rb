@@ -28,6 +28,10 @@ class Game
     switch_attacker_defender
   end
 
+  def ended?
+    @defender.dead?
+  end
+
   private
 
   def switch_attacker_defender

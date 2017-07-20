@@ -28,7 +28,12 @@ class Battle < Sinatra::Base
   post '/attacked' do
     session[:last_move] = params[:attack]
     $game.attack
+    redirect '/game_over' if $game.ended?
     redirect '/play'
+  end
+
+  get '/game_over' do
+    erb :game_over
   end
 
   run! if app_file == $0
