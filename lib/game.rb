@@ -3,11 +3,23 @@ class Game
   DEFAULT_ATTACK = 10
   attr_reader :attacker, :defender, :players, :player_1_turn
 
-  def initialize(player_1, player_2)
+  @@instance = Game.new
+
+  def self.instance
+    return @@instance
+  end
+
+  def initialize#(player_1, player_2)
+    # @players = [player_1, player_2]
+    # @attacker = player_1
+    # @defender = player_2
+    @player_1_turn = true
+  end
+
+  def add_players(player_1, player_2)
     @players = [player_1, player_2]
     @attacker = player_1
     @defender = player_2
-    @player_1_turn = true
   end
 
   def attack
@@ -37,4 +49,7 @@ class Game
   def switch_attacker_defender
     @attacker, @defender = @defender, @attacker
   end
+
+  private_class_method :new
+
 end
