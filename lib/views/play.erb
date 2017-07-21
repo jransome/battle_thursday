@@ -12,19 +12,34 @@
 
 <p><%= @turn %></p>
 
-<div id="cliff">
-<img src="http://www.designmarkgraphics.co.uk/blog/images/2013/06/design-shiny-bomb-inkscape/40.jpg" height="200">
-</div>
+<section class="container1">
+  <div class="one">
+    <img src="http://www.designmarkgraphics.co.uk/blog/images/2013/06/design-shiny-bomb-inkscape/40.jpg">
+  </div>
 
-<div id="hp_scores">
-<p><%= @player_1.name %>'s HP: <%= @player_1.hp %> >==============================< <%= @player_2.name %>'s HP: <%= @player_2.hp %></p>
-</div>
+  <div class="two">
+    <img src="http://www.designmarkgraphics.co.uk/blog/images/2013/06/design-shiny-bomb-inkscape/40.jpg">
+  </div>
+  </section>
 
-<div align='center' style=>
-<form action="/attacked" method="post">
-  <input type="submit" name="attack" value="Attack" >
-</form>
-</div>
+
+  <section class="container2">
+    <div class="one2">
+      <p><%= @player_1.name %>'s HP: <%= @player_1.hp %></p>
+    </div>
+
+    <div class="two2">
+      <p><%= @player_2.name %>'s HP: <%= @player_2.hp %></p>
+    </div>
+  </section>
+
+  <div>
+    <form action="/attacked" method="post">
+      <input type="submit" name="attack" value="Attack" >
+    </form>
+  </div>
+
+
 </body>
 
 </html>

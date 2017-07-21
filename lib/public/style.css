@@ -5,10 +5,38 @@ h1 {
 
 .hp_scores {
       text-align: center;
-      display: inline-block
 }
 
 
-.cliff {
-    display: inline-block
+.container1 {
 }
+
+.one {
+      float: left;
+}
+
+.two {
+      float: right;
+}
+
+.container2 {
+      text-align: center;
+}
+
+.one2 {
+      float: left;
+}
+
+.two2 {
+      float: right;
+}
+
+/*
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}*/
