@@ -15,9 +15,9 @@ class Game
   end
 
   def attack_confirmation(last_move)
-    return "#{@attacker.name} has attacked #{@defender.name}" unless last_move.nil?
-    ""
+    return "#{@attacker.name} has attacked #{@defender.name}" unless last_move.nil? else return ""
   end
+
 
   def turn
     "It's #{@attacker.name}'s turn"
