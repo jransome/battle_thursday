@@ -1,11 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
 <h1>It's <%= @player_1.name %> vs. <%= @player_2.name %>!!!! </h1>
 
 <p><%= @attack_confirmation %></p>
 
 <p><%= @turn %></p>
 
-<p><%= @player_1.name %>'s HP: <%= @player_1.hp %> >==============================< <%= @player_2.name %>'s HP: <%= @player_2.hp %></p>
+<div id="cliff">
+<img src="http://www.designmarkgraphics.co.uk/blog/images/2013/06/design-shiny-bomb-inkscape/40.jpg" height="200">
+</div>
 
+<div id="hp_scores">
+<p><%= @player_1.name %>'s HP: <%= @player_1.hp %> >==============================< <%= @player_2.name %>'s HP: <%= @player_2.hp %></p>
+</div>
+
+<div align='center' style=>
 <form action="/attacked" method="post">
   <input type="submit" name="attack" value="Attack" >
 </form>
+</div>
+</body>
+
+</html>
